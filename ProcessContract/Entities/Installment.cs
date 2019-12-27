@@ -1,6 +1,5 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Text;
+using System.Globalization;
 
 namespace ProcessContract.Entities
 {
@@ -13,6 +12,13 @@ namespace ProcessContract.Entities
         {
             this.dueDate = dueDate;
             this.amount = amount;
+        }
+
+        public override string ToString()
+        {
+            return dueDate.ToString("dd/MM/yyyy") +
+                   " - " +
+                   amount.ToString("F2", CultureInfo.InvariantCulture);
         }
     }
 }
